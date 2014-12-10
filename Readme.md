@@ -8,6 +8,7 @@ Als IDE wurde die offizielle [Arduino IDE](http://arduino.cc/en/main/software "g
 ### Ultraschall
 #### Kabel
 Trig -> MISO
+
 Echo -> MOSI
 
 ### Infrarot
