@@ -15,8 +15,8 @@ void setup(){
 }
 
 long streckeBerechnen(int dauer){
-  long distanz = dauer/2/2.92;
-  return distanz;               //Meter pro sekunde * Mikrosekunde * 1000 = Millimeter
+  long distanz = dauer/2/2.92;   //Distanz mithilfe der Dauer und der Schallgeschwinidkeit berechnen
+  return distanz;
 }
 
 void loop(){
@@ -26,13 +26,12 @@ void loop(){
    int dauer = pulseIn(echoPIN, HIGH);                    //Am Echo Pin auf ein "an" Signal warten und Zeit in durationYS speichern
    
    int strecke = streckeBerechnen(dauer);                 //Entfernung berechnen
-   //Serial.println(dauer);
-   if(strecke < 180000){                                //Wenn Objekt zu weit entfernt ist, wird Distanz nicht angezeigt
+   if(strecke < 1800 && strecke > 20){                    //Wenn Objekt zu weit entfernt bzw. zu nah ist, wird Distanz nicht angezeigt, weil fehlerhaft
        Serial.print(strecke); Serial.println("mm");       //Strecke ausgeben 
    }
    else{
        Serial.println("Zu weit entfernt");
    }
    
-   delay(250);                                            //Halbe Sekunde warten, damit nicht zu schnell
+   delay(500);                                            //Halbe Sekunde warten für Ausgabe
 }
