@@ -2,6 +2,8 @@
 ### --------------
 ### Sketch depending settings, mostly the same but libs not.
 
+ARDUINO_LIBS = Arduino-IRremote
+
 BOARD_TAG = atmega328
 MONITOR_PORT = /dev/ttyUSB0
 
